@@ -39,6 +39,51 @@ The incident was successfully contained and remediated. Review of the evidence a
 For the complete chronological response, including containment, infrastructure assessment, endpoint investigation, eradication, validation, and recovery:
 
 ➡️ **[View the Full Incident Timeline](docs/incident-timeline.md)**
+## Incident Response Workflow
+
+```mermaid
+flowchart TD
+    A["Incident Reported<br/>Unexpected Remote Control"] --> B["Immediate Containment"]
+    B --> C["Disconnect Endpoint<br/>from Network"]
+    B --> D["Power Down<br/>Affected Workstation"]
+
+    C --> E["Endpoint Isolated"]
+    D --> E
+
+    E --> F["On-Site Investigation"]
+
+    F --> G["Scope Determination"]
+    G --> H["Active Directory<br/>Authentication Review"]
+    G --> I["DNS / Infrastructure<br/>Review"]
+    G --> J["Assess Potential<br/>Lateral Movement"]
+
+    H --> K["Credential Remediation"]
+    I --> K
+    J --> K
+
+    K --> L["Reset Potentially<br/>Exposed Credentials"]
+    L --> M["Endpoint Investigation"]
+
+    M --> N["Identify ScreenConnect<br/>Installations & Services"]
+    N --> O["Identify Persistence<br/>Mechanisms"]
+    O --> P["Eradication"]
+
+    P --> Q["Stop & Disable Services"]
+    Q --> R["Remove Components<br/>& Installation Artifacts"]
+    R --> S["Reboot as Required<br/>to Release File Locks"]
+
+    S --> T["Post-Eradication Validation"]
+    T --> U["Verify Remote Access<br/>Mechanism Removed"]
+    U --> V["Review Available Evidence<br/>for Additional Compromise"]
+
+    V --> W["Recovery"]
+    W --> X["Known-Clean Workstation<br/>+ Reset Credentials"]
+    X --> Y["Business Operations<br/>Restored"]
+
+    Y --> Z["Document Findings<br/>& Lessons Learned"]
+```
+
+---
 ## Skills Demonstrated
 
 ### Incident Response
