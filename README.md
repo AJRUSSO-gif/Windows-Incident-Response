@@ -34,7 +34,11 @@ The incident was successfully contained and remediated. Review of the evidence a
 | **Investigation Limitation** | No centralized SIEM or enterprise EDR telemetry |
 
 ---
+## Detailed Documentation
 
+For the complete chronological response, including containment, infrastructure assessment, endpoint investigation, eradication, validation, and recovery:
+
+➡️ **[View the Full Incident Timeline](docs/incident-timeline.md)**
 ## Skills Demonstrated
 
 ### Incident Response
